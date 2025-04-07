@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - VelvetGlow</title>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Prata&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe4e1;
+            color: #4a4a4a;
+        }
+        header {
+            background-size: cover;
+            color:#ffb6c1;
+            padding: 15px 20px;
+            text-align: center;
+            font-family:'Poppins', sans-serif;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #ffb6c1;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+        }
+        nav a:hover {
+            background-color: #ff69b4;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .login-section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        .login-section h2 {
+            color: #ff69b4;
+            font-family: 'Poppins', sans-serif;
+        }
+        .login-section form input {
+            margin: 10px 0;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            font-size: 16px;
+            border: 1px solid #ffb6c1;
+            border-radius: 5px;
+        }
+        .login-section form button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-section form button:hover {
+            background-color: #ff1493;
+        }
+        .error-message {
+            color: red;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        footer {
+            background-color: #ffb6c1;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Account</h1>
+        <p>Login to access your account and view your order history.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about_us.html">About Us</a>
+        <a href="contact.php">Contact Us</a>
+    </nav>
+
+    
+    <main>
+        <section class="login-section">
+            <h2>Login</h2>
+            <form method="POST" action="login.php">
+    <input type="text" name="email" placeholder="Enter your email" required><br>
+    <input type="password" name="password" placeholder="Enter your password" required><br>
+    <button type="submit">Login</button>
+</form>
+            <?php if (isset($_GET['error'])): ?>
+                <p class="error-message"><?php echo htmlspecialchars($_GET['error']); ?></p>
+            <?php endif; ?>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 VelvetGlow. All rights reserved.</p>
+    </footer>
+</body>
+</html>
