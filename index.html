@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>VelvetGlow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffe4e1;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffb6c1;
+            width: 100%;
+            padding: 0 20px;
+            font-size: 16px;
+        }
+        nav a, .dropbtn {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+         .nav-links a:hover {
+            background-color: #ff69b4;
+            border-radius: 5px;
+
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: #ffb6c1;
+            border: none;
+            cursor: pointer;
+            font-size: 16px; 
+            font-weight: 400; 
+            font-family: 'Poppins', sans-serif;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: lightpink;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+
+        }
+        .dropdown-content a {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        main {
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            max-width: 100%;
+        }
+        .section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+            background-size: cover;
+            color: white;
+            border-radius: 10px;
+        }
+        .grid-item {
+            flex: 1;
+            min-width: 300px;
+            max-width: 100%;
+            padding: 10px;
+            width: 48%;
+            border-radius: 40px;
+        }
+        .product-images {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            width: 50%;
+        }
+        .product-images img {
+            width: 45%;
+            border-radius: 60px;
+            transition: transform 0.4s ease; /* Smooth transition for hover */
+        }
+
+        .product-images img:hover {
+            transform: scale(1.1); /* Zoom effect on hover */
+        }
+        footer {
+            background-color: #ffb6c1;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 100%;
+        }
+        footer .column {
+            margin: 10px;
+            flex: 1;
+            min-width: 200px;
+        }
+        footer h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        footer p, footer a {
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            text-decoration: none;
+        }
+        .section:nth-child(even) {
+             background-color: #ffb6c1;
+
+            
+        }
+        .section:nth-child(odd) {
+            background-color: #e683b3;
+            
+        }
+        /* Style the search box inside the navigation bar */
+        .topnav input[type=text] {
+            float: right;
+            padding: 6px;
+            border: none;
+            margin-top: 8px;
+            margin-right: 16px;
+            font-size: 17px;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 25px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+        }
+        .search-container input {
+            border: none;
+            outline: none;
+            padding: 8px;
+            border-radius: 20px;
+            width: 250px;
+            font-size: 16px;
+        }
+        .search-container button {
+            background-color: #ff69b4;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .search-container button:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    
+<nav>
+        <div class="nav-links">
+            <!-- Logo on the left side -->
+        <a href="index.html" class="logo">
+            <img src="img/logoindex.png" alt="VelvetGlow Logo" style="height: 70px;">
+        </a>
+                <div class="dropdown">
+                    <button class="dropbtn">Our Products</button>
+                        <div class="dropdown-content">
+                            <a href="cosmetics.php">Cosmetics</a>
+                            <a href="skincare.php">SkinCare</a>
+                            <a href="tools.php">Tools And Accessories</a>
+                        </div>
+                    </div>
+                <a href="contact.php">Contact Us</a>
+                <a href="about_us.html">About Us</a>
+                <div class="dropdown">
+                    <button class="dropbtn">My Account</button>
+                        <div class="dropdown-content">
+                            <a href="my_account.php">View Profile</a>
+                            <a href="sign_up.html">Sign up Now</a>
+                            <a href="admin_account.php">Admin Dashboard</a>
+                        </div>
+                </div>
+        </div>
+        <div class="topnav">
+        <div class="search-container">
+            <input type="text" placeholder="Search...">
+            <button>
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+    </nav>
+    <main>
+        <section class="section">
+            <div class="grid-item">
+                <div class="w3-container w3-center w3-animate-left">
+                    <h2>Explore Our Products</h2>
+                    <p>Discover a wide range of beauty products tailored for you!</p>
+                    <p style="text-align:center;">At VelvetGlow, we believe in the power of natural ingredients and cutting-edge skincare science. Our mission is to provide you with products that not only enhance your beauty but also nurture your skin’s health. Whether you’re looking for hydration, anti-aging, or deep cleansing, we offer a range of carefully formulated products designed to work harmoniously with your skin.</p>
+                    <p>&nbsp;</p>
+                    <a href="cosmetics.php" style="color: white; text-decoration: underline;">Browse Products</a>
+                </div>
+            </div>
+            <div class="grid-item product-images">
+                <img src="img/product1.png" alt="Product 1">
+                <img src="img/products1.png" alt="Product 2">
+            </div>
+        </section>
+        <section class="section">
+            <div class="grid-item product-images">
+                <img src="img/product2.png" alt="Product 3">
+                <img src="img/product3.png" alt="Product 4">
+            </div>
+            <div class="grid-item">
+                <div class="w3-container w3-center w3-animate-right">
+                    <h2>Shop Now</h2>
+                    <p>Place your orders easily and track them through your account.</p>
+                    <p>VelvetGlow is a makeup brand that offers high-quality tools and products designed to enhance every beauty routine. Our brushes ensure makeup is applied evenly for a smooth, flawless finish, while our beauty blenders seamlessly blend products into the skin for a natural, airbrushed look. Our eyelash curlers define lashes, and our contour kits sculpt and shape the face to perfection. VelvetGlow is committed to providing a range of products that make you glow with confidence, whether you're aiming for a bold look or everyday elegance.</p>
+                    <p>&nbsp;</p>
+                    <a href="skincare.php" style="color: white; text-decoration: underline;">Order Now</a>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="grid-item">
+                <div class="w3-container w3-center w3-animate-left">
+                    <h2>Get Yours Now!</h2>
+                    <p>Experience a smooth ordering process and track all your purchases via your VelvetGlow account.</p>
+                    <p>Our carefully crafted makeup tools are designed to elevate your beauty regimen, ensuring every application is flawless. Whether you’re a makeup enthusiast or just getting started, VelvetGlow’s makeup tools provide precision and ease, allowing you to achieve a professional look at home.</p>
+                    <p>&nbsp;</p>
+                    <a href="tools.php" style="color: white; text-decoration: underline;">Get Yours</a>
+                </div>
+            </div>
+            <div class="grid-item product-images">
+                <img src="img/tools1.png" alt="tools 1">
+                <img src="img/tools2.png" alt="tools 2">
+            </div>
+    </main>
+    <footer>
+        <div class="column">
+            <h4>Contact Us</h4>
+            <p>Email: info@velvetglow.com</p>
+            <p>Phone: +603 6789 225</p>
+        </div>
+        <div class="column">
+            <h4>Follow Us</h4>
+            <p><a href="#">Instagram</a></p>
+            <p><a href="#">Facebook</a></p>
+            <p><a href="#">Twitter</a></p>
+        </div>
+    </footer>
+
+    
+</body>
+</html>
